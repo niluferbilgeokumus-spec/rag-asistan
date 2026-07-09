@@ -1,0 +1,1 @@
+Elektrik mühendisliğinde Fourier Serisi, periyodik bir sinyali sinüs ve kosinüs fonksiyonlarının toplamı olarak ifade etmeye yarayan matematiksel bir araçtır. Bu yöntem, sinyal işleme ve sistem analizinde yaygın olarak kullanılır.
