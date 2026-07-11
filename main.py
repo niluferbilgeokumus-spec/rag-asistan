@@ -15,16 +15,22 @@ def cevap_uret(soru):
 
     client = model.get_chat_client()
 
-    prompt = f"""Asagidaki baglami kullanarak soruyu cevapla. Eger baglamda cevap yoksa, bilmediğini soyle.
+    sistem_mesaji = (
+        "Sen sadece verilen baglami kullanarak soru cevaplayan bir asistansin. "
+        "Eger cevap baglamda yoksa, bilmediğini soyle, tahmin yurutme. "
+        "Cevaplarini kisa ve net tut."
+    )
 
-Baglam:
+    kullanici_mesaji = f"""Baglam:
 {icerik}
 
-Soru: {soru}
-"""
+Soru: {soru}"""
 
     print("\nCevap: ", end="", flush=True)
-    for chunk in client.complete_streaming_chat([{"role": "user", "content": prompt}]):
+    for chunk in client.complete_streaming_chat([
+        {"role": "system", "content": sistem_mesaji},
+        {"role": "user", "content": kullanici_mesaji}
+    ]):
         if not chunk.choices:
             continue
         content = chunk.choices[0].delta.content
