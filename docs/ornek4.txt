@@ -1,0 +1,1 @@
+Z-Donusumu, ayrik zamanli sinyalleri analiz etmek icin kullanilan matematiksel bir araçtir. Fourier Donusumunun ayrik zaman versiyonuna benzer. Sayisal filtre tasarimi ve sistem kararliligi analizinde yaygin olarak kullanilir. Z-Donusumunun yakinsama bolgesi (ROC), sistemin kararliligini belirlemede onemlidir.

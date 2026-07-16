@@ -1,0 +1,1 @@
+Fotodiyot, isigi elektrik akimina donusturen yari iletken bir cihazdir. Ters polarma altinda calisir. Uzerine dusen fotonlar, elektron-deşik ciftleri olusturur ve bu da olculebilir bir akim yaratir. Fotodiyotlar, optik iletisim ve isik sensorlerinde yaygin olarak kullanilir.

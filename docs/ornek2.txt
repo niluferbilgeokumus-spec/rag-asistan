@@ -1,0 +1,1 @@
+MOSFET, Metal Oksit Yari Iletken Alan Etkili Transistor anlamina gelir. Uc terminali vardir: Gate, Drain ve Source. Gate'e uygulanan gerilim, kanaldaki elektron akisini kontrol eder. MOSFET, guc elektroniginde ve dijital devrelerde en yaygin kullanilan transistor turudur.

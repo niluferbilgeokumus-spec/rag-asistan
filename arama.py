@@ -10,7 +10,7 @@ def cosine_similarity(v1, v2):
     v2 = np.array(v2)
     return np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
 
-def en_benzer_parcayi_bul(soru):
+def get_top_chunks(soru, k=3):
     soru_vektor = model.encode(soru).tolist()
 
     conn = sqlite3.connect("dokumanlar.db")
@@ -19,24 +19,20 @@ def en_benzer_parcayi_bul(soru):
     satirlar = cursor.fetchall()
     conn.close()
 
-    en_iyi_skor = -1
-    en_iyi_icerik = None
-    en_iyi_dosya = None
-
+    sonuclar = []
     for dosya_adi, icerik, embedding_json in satirlar:
         vektor = json.loads(embedding_json)
         skor = cosine_similarity(soru_vektor, vektor)
+        sonuclar.append((skor, dosya_adi, icerik))
 
-        if skor > en_iyi_skor:
-            en_iyi_skor = skor
-            en_iyi_icerik = icerik
-            en_iyi_dosya = dosya_adi
-
-    return en_iyi_dosya, en_iyi_icerik, en_iyi_skor
+    sonuclar.sort(key=lambda x: x[0], reverse=True)
+    return sonuclar[:k]
 
 if __name__ == "__main__":
     soru = "Fourier serisi nedir?"
-    dosya, icerik, skor = en_benzer_parcayi_bul(soru)
-    print(f"Soru: {soru}")
-    print(f"En benzer dosya: {dosya} (benzerlik skoru: {skor:.4f})")
-    print(f"İçerik: {icerik}")
+    top_chunks = get_top_chunks(soru, k=3)
+    print(f"Soru: {soru}\n")
+    for skor, dosya, icerik in top_chunks:
+        print(f"[{dosya} - benzerlik: {skor:.4f}]")
+        print(icerik)
+        print("---")

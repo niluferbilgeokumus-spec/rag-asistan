@@ -1,9 +1,15 @@
 from foundry_local_sdk import Configuration, FoundryLocalManager
-from arama import en_benzer_parcayi_bul
+from arama import get_top_chunks
 
 def cevap_uret(soru):
-    dosya, icerik, skor = en_benzer_parcayi_bul(soru)
-    print(f"[Bulunan kaynak: {dosya}, benzerlik: {skor:.4f}]")
+    top_chunks = get_top_chunks(soru, k=3)
+
+    baglam_parcalari = []
+    for skor, dosya, icerik in top_chunks:
+        print(f"[Bulunan kaynak: {dosya}, benzerlik: {skor:.4f}]")
+        baglam_parcalari.append(icerik)
+
+    baglam = "\n\n".join(baglam_parcalari)
 
     config = Configuration(app_name="rag-asistan")
     FoundryLocalManager.initialize(config)
@@ -22,7 +28,7 @@ def cevap_uret(soru):
     )
 
     kullanici_mesaji = f"""Baglam:
-{icerik}
+{baglam}
 
 Soru: {soru}"""
 

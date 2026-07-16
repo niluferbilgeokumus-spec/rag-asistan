@@ -1,0 +1,1 @@
+Laser diyot, uyarilmis isima yoluyla tutarli isik ureten bir yari iletken cihazdir. LED'den farkli olarak, laser diyotlar dar bir dalga boyu araliginda yogun ve yönlendirilmis isik yayar. Fiber optik iletisimde, barkod okuyucularda ve lazer imlecelerde kullanilir.
