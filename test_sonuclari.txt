@@ -1,0 +1,24 @@
+RAG Asistani baslatiliyor, lutfen bekleyin...
+
+Hazir! Sorunu yaz (cikmak icin /exit yaz)
+
+Soru: [Bulunan kaynak: ornek2.txt, benzerlik: 0.6266]
+[Bulunan kaynak: ornek1.txt, benzerlik: 0.1725]
+[Bulunan kaynak: ornek4.txt, benzerlik: 0.1657]
+Cevap:  MOSFET, Metal Oksit Yari Iletken Alan Etkili Transistordir, bu yüzden kanaldaki elektron akisini kontrol edebilir ve dijital devrelerde yaygýn olarak kullanýlýr.
+
+Soru: [Bulunan kaynak: ornek1.txt, benzerlik: 0.5353]
+[Bulunan kaynak: ornek3.txt, benzerlik: 0.5306]
+[Bulunan kaynak: ornek5.txt, benzerlik: 0.4555]
+Cevap:  Fotodiyot, optik iletisiminde yayýlmýþ bir cihazdir. Uzerine, dusen fotonlar kalýr, elektron-deþik ciftleri oluþturur ve bu, olculebilir bir akim yaratýr. Bu, elektrik akýmýnýn isiyle iletiþim yapabileceði anlamýna gelir.
+
+Soru: [Bulunan kaynak: ornek4.txt, benzerlik: 0.6219]
+[Bulunan kaynak: ornek1.txt, benzerlik: 0.5232]
+[Bulunan kaynak: ornek5.txt, benzerlik: 0.3269]
+Cevap:  Z-Donusumu, sistem kararliliðini analiz etmek için ayrik zamanli sinyalleri ile Fourier Serisi arasýnda benzer fonksiyonlarla kullanýlýr. Bu, sistem kararliliðini belirlemek için yaygýn olarak kullanýlan sayýsal filtre tasarýmý ve analizinde Z-Donusumunun rolüne yer alýr.
+
+Soru: Cevap: Bu konuda dokumanlarimda yeterli bilgi bulamadim.
+
+Soru: Cevap: Bu konuda dokumanlarimda yeterli bilgi bulamadim.
+
+Soru: Soru: Gorusuruz!
