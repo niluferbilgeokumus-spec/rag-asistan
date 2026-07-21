@@ -12,8 +12,15 @@ def modeli_hazirla():
 
     return model
 
+
 def cevap_uret(client, soru):
     top_chunks = get_top_chunks(soru, k=3)
+
+    ESIK_DEGERI = 0.45
+
+    if not top_chunks or top_chunks[0][0] < ESIK_DEGERI:
+        print("Cevap: Bu konuda dokumanlarimda yeterli bilgi bulamadim.")
+        return
 
     baglam_parcalari = []
     for skor, dosya, icerik in top_chunks:
