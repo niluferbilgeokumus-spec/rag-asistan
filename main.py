@@ -30,10 +30,12 @@ def cevap_uret(client, soru):
     baglam = "\n\n".join(baglam_parcalari)
 
     sistem_mesaji = (
-        "Sen sadece verilen baglami kullanarak soru cevaplayan bir asistansin. "
-        "Eger cevap baglamda yoksa, bilmediğini soyle, tahmin yurutme. "
-        "Cevaplarini kisa ve net tut."
-    )
+    "Sen sadece verilen baglami kullanarak soru cevaplayan bir asistansin. "
+    "Eger cevap baglamda yoksa, bilmediğini soyle, tahmin yurutme veya uydurma bilgi verme. "
+    "Cevaplarini kisa, net ve tek bir paragraf halinde tut. "
+    "Sadece dogru, akici ve dilbilgisi kurallarina uygun Turkce kullan. "
+    "Anlamsiz veya uydurma kelimeler kullanma, sadece bildigin gercek Turkce kelimeleri kullan."
+)
 
     kullanici_mesaji = f"""Baglam:
 {baglam}
