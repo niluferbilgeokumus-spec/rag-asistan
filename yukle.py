@@ -1,3 +1,7 @@
+# Dokuman Yukleme Modulu
+# docs/ klasorundeki tum .txt dosyalarini okur, parcalara (chunk) boler,
+# her parcanin embedding'ini hesaplar ve SQLite veritabanina kaydeder.
+
 import sqlite3
 import os
 import json
@@ -5,7 +9,9 @@ from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
+
 def veritabani_olustur():
+    """Veritabanini ve tabloyu sifirdan olusturur (varsa eskisini siler)."""
     conn = sqlite3.connect("dokumanlar.db")
     cursor = conn.cursor()
     cursor.execute("DROP TABLE IF EXISTS parcalar")
@@ -20,13 +26,17 @@ def veritabani_olustur():
     conn.commit()
     conn.close()
 
+
 def metni_parcala(metin):
+    """Metni bos satirlara gore kucuk parcalara boler."""
     parcalar = [p.strip() for p in metin.split("\n\n") if p.strip()]
     if not parcalar:
         parcalar = [metin.strip()]
     return parcalar
 
+
 def dokumanlari_yukle():
+    """docs/ klasorundeki tum .txt dosyalarini isleyip veritabanina ekler."""
     veritabani_olustur()
     conn = sqlite3.connect("dokumanlar.db")
     cursor = conn.cursor()
@@ -58,6 +68,7 @@ def dokumanlari_yukle():
     conn.commit()
     conn.close()
     print(f"\nToplam {toplam} parca veritabanina eklendi.")
+
 
 if __name__ == "__main__":
     dokumanlari_yukle()
